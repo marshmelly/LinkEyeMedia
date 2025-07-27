@@ -1,0 +1,9 @@
+.card-image{
+    max-height: 450px;
+    max-width: 400px;
+    height: auto;
+    display: flex;
+    width: 100%;
+    padding: 8px;
+    align-items: center;
+}

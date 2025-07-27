@@ -1,0 +1,147 @@
+.navbar {
+  display: fixed;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-height: 100px;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  z-index: 100;
+}
+   
+
+.logo a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #29a07e; /* Jungle green */
+  transition: color 0.3s ease;
+}
+
+.logo a:hover {
+  color: #2962ff; /* Blue on hover */
+}
+
+.navLinks {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.photo{
+    max-width: 80px;
+    max-height: 80px;
+    
+}
+
+.navLinks li a {
+  text-decoration: none;
+  color: #29a07e; /* Jungle green */
+  font-weight: 500;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navLinks li a:hover {
+  color: #2962ff; /* Blue on hover */
+}
+
+/* Optional: Add underline effect on hover */
+.navLinks li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #2962ff;
+  transition: width 0.3s ease;
+}
+
+.navLinks li a:hover::after {
+  width: 100%;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .navLinks {
+    margin-top: 1rem;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 20;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #EEF1EA;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+.bar.open:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.bar.open:nth-child(2) {
+    opacity: 0;
+}
+
+.bar.open:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .nav-menu {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+       background: linear-gradient(white, green, black);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        z-index: 10;
+    }
+
+    .nav-menu.open {
+        max-height: 300px; /* enough to show all menu items */
+    }
+
+    .nav-item {
+        margin: 15px 0;
+        text-align: center;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .header {
+        flex-grow: 1;
+        text-align: center;
+    }
+}
+

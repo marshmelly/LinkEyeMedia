@@ -1,0 +1,13 @@
+.photography{
+    font: 300;
+    font-size: larger;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.pic{
+    margin-left: 30px;
+    max-width: 99%;
+    max-height: 750px;
+    display: flex;
+
+}

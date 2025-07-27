@@ -1,0 +1,13 @@
+.About-page{
+    font-size: 25px;
+    font-weight: 300;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.image{
+    display: flex;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+      
+}
