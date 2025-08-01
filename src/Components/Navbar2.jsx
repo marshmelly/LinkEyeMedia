@@ -20,14 +20,14 @@ const Navbar2 = () => {
         <div className={`bar ${isOpen ? 'open' : ''}`}></div>
       </div>
       <div className='logo'>
-        <a href="/"> <img src={link} alt=""  className='photo'/></a>
+        <a href="/"> <img src={link} alt=""  className='nav-photo'/></a>
       </div>
-      <ul className='navLinks'>
-        <li><a href="/">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/services">Services</a></li>
-        <li><a href="/portfolio">Portfolio</a></li>
-        <li><a href="/contact">Contact</a></li>
+      <ul className={`navLinks ${isOpen ? 'open' : ''}`}>
+        <li className='nav-item'><a href="/">Home</a></li>
+        <li className='nav-item'><a href="/about">About</a></li>
+        <li className='nav-item'><a href="/services">Services</a></li>
+        <li className='nav-item'><a href="/portfolio">Portfolio</a></li>
+        <li className='nav-item'><a href="/contact">Contact</a></li>
       </ul>
     </nav>
   );

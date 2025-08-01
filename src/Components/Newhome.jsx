@@ -1,35 +1,71 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, {useState, useEffect} from 'react';
+import { useNavigate} from 'react-router-dom';
 import styled from 'styled-components';
 import { FaCamera, FaArrowRight } from 'react-icons/fa';
+import SlideButton from '../Components/Button'
+
 
 //importing images from project files folder
 import bride from '../Components/project files/bride.jpg';
 import hero from '../Components/project files/hero.jpg';
+import paul from '../Components/project files/paul-abrahams-T7HZoPFcQoc-unsplash.jpg';
+import richard from '../Components/project files/richard-stachmann-mm_aV4S5qQE-unsplash.jpg';
 
 // Sample images (replace with your actual images)
 const images = {
-  hero: 'https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80',
   portrait: 'https://images.unsplash.com/photo-1583864697784-a0efc8379f70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1888&q=80',
   wedding:'https://images.unsplash.com/photo-1529632316988-4f2a39c9357c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1888&q=80',
   event: 'https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80'
 };
 
+const carouselImages = [
+  paul,
+  richard,
+  hero
+ 
+]
+
 const Homepage = () => {
   const navigate = useNavigate();
+   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [fade, setFade] = useState(true);
+  
+    useEffect(() => {
+      const interval = setInterval(() => {
+        setFade(false); // Start fade out
+        
+        setTimeout(() => {
+          setCurrentImageIndex((prevIndex) => 
+            prevIndex === carouselImages.length - 1 ? 0 : prevIndex + 1
+          );
+          setFade(true); // Complete transition and fade in new image
+        }, 1000); // This matches the transition duration
+      }, 5000); // Change image every 5 seconds
+  
+      return () => clearInterval(interval);
+    }, []);
 
   return (
     <HomeContainer>
       {/* Hero Section */}
-      <HeroSection bgImage={hero}>
-        <HeroOverlay>
-          <h1>Capturing Excellence</h1>
-          <p>Professional photography that celebrates your magic</p>
-          <CTAButton onClick={() => navigate('/portfolio')}>
-            View Portfolio <FaArrowRight />
-          </CTAButton>
-        </HeroOverlay>
-      </HeroSection>
+     <HeroSection>
+            {carouselImages.map((image, index) => (
+              <HeroImage
+                key={index}
+                src={image}
+                alt="Hero background"
+                active={index === currentImageIndex}
+                fade={fade}
+              />
+            ))}
+            <HeroOverlay>
+              <h1>Capturing Excellence</h1>
+              <p>Professional photography that celebrates your magic moments</p>
+              <SlideButton onClick={() => navigate('/portfolio')}>
+                View Portfolio <FaArrowRight />
+              </SlideButton>
+            </HeroOverlay>
+          </HeroSection>
 
       {/* Services Section */}
       <Section>
@@ -45,7 +81,7 @@ const Homepage = () => {
               <FaCamera />
               <h3>Portrait Photography</h3>
               <p>Stunning individual and family portraits that capture your essence</p>
-              <ServiceLink onClick={() => navigate('/portraits')}>
+              <ServiceLink onClick={() => navigate('/photography')}>
                 See examples <FaArrowRight />
               </ServiceLink>
             </ServiceContent>
@@ -69,7 +105,7 @@ const Homepage = () => {
               <FaCamera />
               <h3>Event Photography</h3>
               <p>Professional coverage for all your important occasions</p>
-              <ServiceLink onClick={() => navigate('/events')}>
+              <ServiceLink onClick={() => navigate('/contact')}>
                 Learn more <FaArrowRight />
               </ServiceLink>
             </ServiceContent>
@@ -85,9 +121,9 @@ const Homepage = () => {
             We specialize in showcasing the beauty, strength, and diversity of your diverse experience.
             Our photography highlights authentic moments with technical excellence and cultural awareness.
           </p>
-          <CTAButton onClick={() => navigate('/about')}>
+          <SlideButton onClick={() => navigate('/about')}>
             Our Story <FaArrowRight />
-          </CTAButton>
+          </SlideButton>
         </AboutContent>
         <AboutImage src={images.portrait} alt="Photographer's vision" />
       </AboutSection>
@@ -110,6 +146,19 @@ const HeroSection = styled.section`
   justify-content: center;
 `;
 
+const HeroImage = styled.img`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  opacity: ${props => props.active ? (props.fade ? 1 : 0) : 0};
+  transition: opacity 1s ease-in-out;
+`;
+
+
 const HeroOverlay = styled.div`
   text-align: center;
   color: white;
@@ -119,6 +168,7 @@ const HeroOverlay = styled.div`
   h1 {
     font-size: 3.5rem;
     margin-bottom: 1rem;
+    color: #f8f9fa;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
     animation: fadeInDown 1s ease-out;
   }
@@ -141,25 +191,7 @@ const HeroOverlay = styled.div`
   }
 `;
 
-const CTAButton = styled.button`
-  background: #e74c3c;
-  color: white;
-  border: none;
-  padding: 1rem 2rem;
-  font-size: 1.1rem;
-  border-radius: 4px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin: 0 auto;
-  transition: all 0.3s ease;
-  
-  &:hover {
-    background: #c0392b;
-    transform: translateY(-3px);
-  }
-`;
+
 
 const Section = styled.section`
   padding: 5rem 10%;

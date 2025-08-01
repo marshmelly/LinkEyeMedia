@@ -12,7 +12,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Landing from './Components/Landing';
 import Portfolio from './Components/Portfolio';
 import Service from './Components/Services';
-import Paralax from './Components/Paralax'
+import  Weddings from'./Components/Wedding';
+
 
 
 
@@ -25,21 +26,17 @@ function App() {
     <div className='App'>
      
       
-       <Navbar/>
-      
-       
-       
-
+       <Navbar/>       
            <BrowserRouter>
-           
-
             <Routes>
               <Route path='/home' element={<Home/>}/>
               <Route path='/' element={<Landing/>}/>
               <Route path='/home' element={<Home/>}/>
               <Route path='/about' element={<About/>}/>
+              
               <Route path='/portfolio' element={<Portfolio/>}/>
               <Route path='/contact' element={<Contact/>}/>
+              <Route path='/weddings' element={<Weddings/>}/>
               <Route path='/services' element={<Service/>}/>
               <Route path='/photography' element={<NewPhoto/>}/>
               <Route path='/footer' element={<Footer/>}/>

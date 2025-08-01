@@ -2,12 +2,15 @@ import React from 'react';
 import { Parallax, ParallaxLayer } from '@react-spring/parallax';
 import { FaArrowDown } from 'react-icons/fa';
 import styled from 'styled-components';
+import image from './About.jpg'
+import Rado from '../Components/project files/Rado.png'
+
 
 // Images for parallax layers (use your own images)
 const images = {
-  bg1: 'https://images.unsplash.com/photo-1586082588570-0c8b1c0b5e36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+  bg1:Rado,
   bg2: 'https://images.unsplash.com/photo-1583864697784-a0efc8379f70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1888&q=80',
-  bg3: 'https://images.unsplash.com/photo-1529632316988-4f2a39c9357c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1888&q=80',
+  bg3: image,
   fg1: 'https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80'
 };
 

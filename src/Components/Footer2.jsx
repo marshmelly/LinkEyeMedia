@@ -1,5 +1,8 @@
 import React from 'react';
 import  './Footer2.css';
+import fb from './project files/fbb.jpeg'
+import ig from './project files/ig.jpeg'
+import x from'./project files/x.jpeg'
 
 const Footer2 = () => {
   return (
@@ -10,25 +13,21 @@ const Footer2 = () => {
           <h3>Connect With Us</h3>
           <ul className='socialLinks'>
             <li>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-                <i className="fa-brands fa-facebook"></i> Facebook
+              <a href="https://www.facebook.com/search/top?q=zash%20photocreations" target="_blank" rel="noopener noreferrer">
+                <i className="fa-brands fa-facebook"></i> Facebook <img src={fb} alt="facebook" className='photo' />
               </a>
             </li>
             <li>
               <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                <i className="fa-brands fa-twitter"></i> Twitter
+                <i className="fa-brands fa-twitter"></i> Twitter<img src={x} alt="" className='photo' />
               </a>
             </li>
             <li>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-                <i className="fa-brands fa-instagram"></i> Instagram
+              <a href="https://www.instagram.com/zashphotocreations/" target="_blank" rel="noopener noreferrer">
+                <i className="fa-brands fa-instagram"></i> Instagram <img src={ig} alt="" className='photo' />
               </a>
             </li>
-            <li>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-                <i className="fa-brands fa-linkedin"></i> LinkedIn
-              </a>
-            </li>
+          
           </ul>
         </div>
 
@@ -51,7 +50,7 @@ const Footer2 = () => {
       </div>
 
       <div className='footerBottom'>
-        <p>&copy; {new Date().getFullYear()} LInk Eye Media. All Rights Reserved.</p>
+        <p>&copy; {new Date().getFullYear()} Link Eye Media. All Rights Reserved.</p>
       </div>
     </footer>
   );

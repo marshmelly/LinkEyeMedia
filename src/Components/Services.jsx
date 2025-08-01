@@ -1,8 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
 import { FaCamera, FaVideo, FaBroadcastTower } from 'react-icons/fa';
 
 const ServicesSection = () => {
+  const navigate= useNavigate('')
   const services = [
     {
       icon: <FaCamera />,
@@ -47,7 +49,7 @@ const ServicesSection = () => {
               </ul>
             </EventList>
             
-            <LearnMoreButton>Learn More →</LearnMoreButton>
+            <LearnMoreButton onClick={()=>{navigate('/contact')}}>Inquire →</LearnMoreButton>
           </ServiceCard>
         ))}
       </ServicesGrid>

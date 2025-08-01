@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FiSearch, FiX, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
-import sunrise from '../Components/project files/sunrise.jpg';
-import bride from '../Components/project files/bridal moment.jpg'
+import sunrise from '../Components/project files/sunrise2.jpg';
+import bride from '../Components/project files/bridal moment 2.jpg'
 
 
 // Sample data items for the portfolio
 const portfolioItems = [
-  { id: 1, category: 'nature', title: 'Mountain Sunrise',imageUrl:sunrise},
+  { id: 1, category: 'nature', title: 'Adventure Photography',imageUrl:sunrise},
   { id: 2, category: 'portrait', title: 'Urban Portrait', imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&auto=format' },
   { id: 3, category: 'wedding', title: 'Bridal Moment', imageUrl:bride },
   { id: 4, category: 'nature', title: 'Forest Pathway', imageUrl: 'https://images.unsplash.com/photo-1682695796954-bad0d0f59ff1?w=800&auto=format' },
@@ -253,6 +253,7 @@ const Overlay = styled.div`
 
   h3 {
     margin-bottom: 0.5rem;
+    color: white;
     font-size: 1.2rem;
   }
 

@@ -14,7 +14,7 @@ const Landing = () => {
         <h1>
           Welcome to Link Eye Media
         </h1>
-        <p>Come and explore a world full of memories</p>
+        <p>Come and explore a world full of ecstatic memories</p>
       </div>
       <div className="button-container">
         <button className='explore-button' onClick={()=> navigate('/home')}>Explore <FaArrowRight/></button>

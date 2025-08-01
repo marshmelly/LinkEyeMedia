@@ -9,10 +9,10 @@ const NewPhoto = () => {
   return (
     <div className='photography'>
       <h1>Photography</h1>
-      <img src={snip} alt="" /><br /> <br /> <br />
+      <img src={snip} alt="" className='pic' /><br /> <br /> <br />
       <img src={pic} alt="" className='pic' /> <br /> <br />
       <img src={photo} alt="" className='pic' /><br /><br />
-      <img src={snip1} alt="" /><br /><br />
+      <img src={snip1} alt="" className='pic' /><br /><br />
     </div>
   )
 }

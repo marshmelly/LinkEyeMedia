@@ -53,6 +53,8 @@ const Contact = () => {
 
   return (
     <section className="contact-section" id="contact">
+      <h2>WANT TO KNOW MORE</h2>
+      <br />
       <div className="contact-container">
         <div className="contact-info">
           <h2>Get in Touch</h2>
@@ -78,7 +80,7 @@ const Contact = () => {
             <FaEnvelope className="info-icon" />
             <div>
               <h3>Email</h3>
-              <p>Zarlfens@gmail.com</p>
+            <p>linkeyemedia@gmail.com</p>
             </div>
           </div>
         </div>
