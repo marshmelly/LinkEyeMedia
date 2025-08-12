@@ -127,6 +127,8 @@ const PortfolioSection = () => {
 const PortfolioContainer = styled.section`
   padding: 4rem 5%;
   background: #f9f9f9;
+  margin: 0;
+  padding: 0.5;
 `;
 
 const SectionHeader = styled.div`
@@ -205,6 +207,7 @@ const SearchBox = styled.div`
 const GalleryGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  color: white;
   gap: 1.5rem;
 `;
 

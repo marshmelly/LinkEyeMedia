@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { FaCamera, FaVideo, FaBroadcastTower } from 'react-icons/fa';
 
 const ServicesSection = () => {
-  const navigate= useNavigate('')
+  const navigate = useNavigate();
   const services = [
     {
       icon: <FaCamera />,
@@ -49,7 +49,7 @@ const ServicesSection = () => {
               </ul>
             </EventList>
             
-            <LearnMoreButton onClick={()=>{navigate('/contact')}}>Inquire →</LearnMoreButton>
+            <LearnMoreButton onClick={() => navigate('/contact')}>Inquire →</LearnMoreButton>
           </ServiceCard>
         ))}
       </ServicesGrid>
@@ -59,70 +59,72 @@ const ServicesSection = () => {
 
 // Styled Components
 const ServicesContainer = styled.section`
-  padding: 5rem 5%;
+  padding: 2rem 5%;
   background: #f8f9fa;
+  margin: 0.5;
 `;
 
 const SectionHeader = styled.div`
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   
   h2 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     color: #333;
     margin-bottom: 0.5rem;
   }
   
   p {
     color: #666;
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 `;
 
 const ServicesGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  gap: 1.5rem;
   max-width: 1200px;
   margin: 0 auto;
 `;
 
 const ServiceCard = styled.div`
   background: white;
-  border-radius: 10px;
-  padding: 2rem;
+  border-radius: 8px;
+  padding: 1.5rem;
   box-shadow: 0 5px 15px rgba(0,0,0,0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   
   &:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
   }
 `;
 
 const ServiceIcon = styled.div`
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   color: #e74c3c;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
 `;
 
 const ServiceTitle = styled.h3`
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
   color: #333;
 `;
 
 const ServiceDescription = styled.p`
   color: #666;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
+  line-height: 1.5;
+  margin-bottom: 1.2rem;
+  font-size: 0.95rem;
 `;
 
 const EventList = styled.div`
-  margin: 1.5rem 0;
+  margin: 1.2rem 0;
   
   h4 {
-    font-size: 1rem;
+    font-size: 0.95rem;
     color: #333;
     margin-bottom: 0.5rem;
   }
@@ -138,9 +140,9 @@ const EventList = styled.div`
   li {
     background: #f1f1f1;
     color: #333;
-    padding: 0.3rem 0.8rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
+    padding: 0.25rem 0.7rem;
+    border-radius: 18px;
+    font-size: 0.85rem;
   }
 `;
 
@@ -152,8 +154,9 @@ const LearnMoreButton = styled.button`
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.3rem;
   padding: 0;
+  font-size: 0.95rem;
   transition: color 0.3s ease;
   
   &:hover {

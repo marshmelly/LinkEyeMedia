@@ -23,7 +23,7 @@ const Navbar2 = () => {
         <a href="/"> <img src={link} alt=""  className='nav-photo'/></a>
       </div>
       <ul className={`navLinks ${isOpen ? 'open' : ''}`}>
-        <li className='nav-item'><a href="/">Home</a></li>
+        <li className='nav-item'><a href="/home">Home</a></li>
         <li className='nav-item'><a href="/about">About</a></li>
         <li className='nav-item'><a href="/services">Services</a></li>
         <li className='nav-item'><a href="/portfolio">Portfolio</a></li>
