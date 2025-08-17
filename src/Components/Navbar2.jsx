@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Navbar2.css';
+import './Navbar.css';
 import link from './project files/Linkeye.jpg'
 
 const Navbar2 = () => {
