@@ -28,7 +28,7 @@ const PortfolioSection = () => {
 
   const handleImageClick = (item) => {
     setSelectedImage(item);
-    document.body.style.overflow = 'hidden'; // Prevent scrolling when lightbox is open
+    document.body.style.overflow = 'hidden'; 
   };
 
   const closeLightbox = () => {

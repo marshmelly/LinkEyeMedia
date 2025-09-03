@@ -9,7 +9,8 @@
   padding: 1rem 2rem;
   background-color: #DDEB9D;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  height: 70px; /* Changed from max-height for consistency */
+  height: 70px; 
+  padding-right: 10px;
   width: 100%;
   z-index: 1000;
   /* Optional: Add transition for smooth effects */

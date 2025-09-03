@@ -1,12 +1,11 @@
 import React from 'react';
 import './App.css';
 import Home from './Components/Home';
-import About from './Components/About';
+import About from './Components/NewAbout';
 import Contact from './Components/Contact';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Navbar from './Components/Navbar2';
 import Footer from './Components/Footer2';
-import NewPhoto from './Components/NewPhoto';
 import "bootstrap/dist/js/bootstrap.min.js";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Landing from './Components/Landing';
@@ -37,7 +36,6 @@ function App() {
               <Route path='/contact' element={<Contact/>}/>
               <Route path='/weddings' element={<Weddings/>}/>
               <Route path='/services' element={<Service/>}/>
-              <Route path='/photography' element={<NewPhoto/>}/>
               <Route path='/footer' element={<Footer/>}/>
             </Routes>
            </BrowserRouter>
