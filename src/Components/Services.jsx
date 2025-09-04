@@ -71,6 +71,7 @@ const ServicesSection = () => {
 const ServicesContainer = styled.section`
   padding: 4rem 5%;
   background: #f8f9fa;
+  margin:0
 `;
 
 const SectionHeader = styled.div`

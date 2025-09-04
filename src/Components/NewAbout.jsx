@@ -7,12 +7,12 @@ const NewAbout = () => {
     <div className='About'>
       <AboutSection>
         <AboutContent>
-          <h2>About Our Vision</h2>
+          <h2>About Us (Link Eye Media) </h2>
           <p>
-            Hey there! I'm Zadock, lead corporator photographer at Link Eye, we specialize in the artistry of manipulating light to create stunning photographs.
-            Over the past decade, we have endeavored to create magical moments and capture the most memorable moments to be treasured for years to come.
-            Our photography journey has been a real page turner, filled with awesome clients, and rock-solid friendships that last a lifetime.
-            We would like you to be part of our story by joining us and let us create magic.
+            Hey there! I'm Zadock (a.k.a Zash), lead cameraman at Link Eye Media. We specialize in the artistry of manipulation using light to create mystical and stunning photographs.
+            Over the past decade, we have endeavored to create magical moments that capture the most memorable moments treasured for years to come.
+            Our photography journey has been a real page turner, filled with awesome clients, and rock-solid friendships that transcends into decades.
+            Kindly journey with us as we continue to explore places.
           </p>
         </AboutContent>
         <AboutImage>
@@ -28,6 +28,7 @@ const AboutSection = styled.section`
   grid-template-columns: 1fr 1fr;
   min-height: 500px;
   background: #FAF6F9;
+  margin:0;
   
   @media (max-width: 768px) {
     grid-template-columns: 1fr;

@@ -1,45 +1,55 @@
 import React, { useState } from 'react';
 import './Wedding.css';
+import { useNavigate } from 'react-router-dom';
+
+import pic1 from './Wedding/wedding1.jpeg';
+import pic2 from './Wedding/wedding2.jpeg';
+import pic3 from './Wedding/wedding3.jpeg';
+import pic4 from './Wedding/wedding4.jpeg';
+import pic5 from './Wedding/pic5.jpeg';
 
 const WeddingPhotography = () => {
   const [activeFaq, setActiveFaq] = useState(null);
-
+  const navigate = useNavigate();
+  
   const toggleFaq = (index) => {
     setActiveFaq(activeFaq === index ? null : index);
   };
 
+
   const weddingPhotos = [
     {
       id: 1,
-      src: 'wedding1.jpg',
+      src: pic1,
       alt: 'Bride and groom portrait',
       caption: 'Sarah & Michael - Summer Garden Wedding'
     },
     {
       id: 2,
-      src: 'wedding2.jpg',
+      src: pic2,
       alt: 'First dance',
       caption: 'Jessica & David - Romantic Ballroom Wedding'
     },
     {
       id: 3,
-      src: 'wedding3.jpg',
+      src: pic3,
       alt: 'Ceremony kiss',
       caption: 'Amanda & James - Beachfront Wedding'
     },
     {
       id: 4,
-      src: 'wedding4.jpg',
+      src: pic4,
       alt: 'Bridal party',
       caption: 'Nicole & Robert - Vineyard Wedding'
     }
   ];
+  
 
   const pricingPlans = [
     {
       id: 1,
       name: 'Essential',
-      price: 1200,
+      price: 35000,
       features: [
         '4 hours coverage',
         '1 photographer',
@@ -52,7 +62,7 @@ const WeddingPhotography = () => {
     {
       id: 2,
       name: 'Premium',
-      price: 2400,
+      price: 80000,
       features: [
         '8 hours coverage',
         '2 photographers',
@@ -66,7 +76,7 @@ const WeddingPhotography = () => {
     {
       id: 3,
       name: 'Luxury',
-      price: 3800,
+      price: 150000,
       features: [
         'Full day coverage',
         '2 photographers',
@@ -105,23 +115,34 @@ const WeddingPhotography = () => {
       id: 1,
       quote: 'Our wedding photos are absolutely stunning! They captured every special moment perfectly.',
       couple: 'Emily & Ryan',
-      image: 'couple1.jpg'
+      image: pic1 
     },
     {
       id: 2,
       quote: 'Working with them was such a pleasure. The photos tell the complete story of our day.',
       couple: 'Sophia & Mark',
-      image: 'couple2.jpg'
+      image: pic2
     }
   ];
+
+    const heroImage = [
+        pic5,
+      {
+   
+    alt: 'Wedding couple in a romantic embrace'
+  }
+]
 
   return (
     <div className="wedding-photography">
       {/* Hero Section */}
       <section className="wedding-hero">
+        <div className="hero-image-container">
+          <img src={heroImage.src} alt={heroImage.alt} className="hero-image" /> 
+        </div>
         <h1>Capturing Your Perfect Wedding Moments</h1>
         <p>Professional wedding photography that tells your unique love story</p>
-        <button className="cta-button">View Our Portfolio</button>
+        <button className="cta-button" onClick={() => navigate('/portfolio')}>View Our Portfolio</button>
       </section>
 
       {/* Gallery Section */}
@@ -135,7 +156,7 @@ const WeddingPhotography = () => {
             </div>
           ))}
         </div>
-        <button className="view-more">View Full Wedding Portfolio</button>
+        
       </section>
 
       {/* Pricing Section */}
@@ -151,7 +172,7 @@ const WeddingPhotography = () => {
             >
               {plan.featured && <div className="popular-badge">Most Popular</div>}
               <h3>{plan.name}</h3>
-              <div className="price">${plan.price.toLocaleString()}</div>
+              <div className="price">Ksh{plan.price.toLocaleString()}</div>
               <ul className="features">
                 {plan.features.map((feature, index) => (
                   <li key={index}>{feature}</li>
