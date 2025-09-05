@@ -48,7 +48,7 @@ const WeddingPhotography = () => {
   const pricingPlans = [
     {
       id: 1,
-      name: 'Essential',
+      name: 'Diamond',
       price: 35000,
       features: [
         '4 hours coverage',
@@ -61,7 +61,7 @@ const WeddingPhotography = () => {
     },
     {
       id: 2,
-      name: 'Premium',
+      name: 'Lifestyle',
       price: 80000,
       features: [
         '8 hours coverage',
@@ -75,7 +75,7 @@ const WeddingPhotography = () => {
     },
     {
       id: 3,
-      name: 'Luxury',
+      name: 'Exucutive',
       price: 150000,
       features: [
         'Full day coverage',
