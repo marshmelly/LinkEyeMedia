@@ -41,6 +41,8 @@
 .navLinks {
   display: flex;
   list-style: none;
+  justify-content: center;
+  align-items: center;
   gap: 2rem;
   margin: 0;
   padding: 0;

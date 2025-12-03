@@ -30,6 +30,7 @@ const Navbar2 = () => {
         <li className='nav-item'><a href="/portfolio">Portfolio</a></li>
         <li className='nav-item'><a href="/about">About</a></li>
         <li className='nav-item'><a href="/contact">Contact</a></li>
+        <li className='nav-item'><a href="/contact"></a></li>
       </ul>
     </nav>
   );

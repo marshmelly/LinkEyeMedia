@@ -1,5 +1,5 @@
 import React from 'react';
-import photo from './project files/IMG-20250404-WA0032 (1).jpg';
+import photo from './project files/Zash.jpg';
 import styled from 'styled-components';
 
 const NewAbout = () => {

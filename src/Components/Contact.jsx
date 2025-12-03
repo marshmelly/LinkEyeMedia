@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FaPaperPlane, FaPhone, FaMapMarkerAlt, FaEnvelope } from 'react-icons/fa';
 import './Contact.css';
+import emailjs from 'emailjs-com';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -11,14 +12,6 @@ const Contact = () => {
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value
-    });
-  };
 
   const validateForm = () => {
     const newErrors = {};
@@ -35,17 +28,27 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const formErrors = validateForm();
-    
+
     if (Object.keys(formErrors).length === 0) {
       setIsSubmitting(true);
-      // Simulate API call
-      setTimeout(() => {
-        console.log('Form submitted:', formData);
+
+      emailjs.sendForm(
+        process.env.REACT_APP_SERVICE_ID,
+        process.env.REACT_APP_TEMPLATE_ID,
+        e.target, // the form element
+        process.env.REACT_APP_PUBLIC_KEY
+      )
+      .then(() => {
         setIsSubmitting(false);
         setSubmitSuccess(true);
+        alert("Messege Sent Successfully")
         setFormData({ name: '', email: '', message: '' });
         setTimeout(() => setSubmitSuccess(false), 3000);
-      }, 1500);
+      })
+      .catch(() => {
+        setIsSubmitting(false);
+        alert("Oops! Something went wrong. Please check your connection and try again");
+      });
     } else {
       setErrors(formErrors);
     }
@@ -80,7 +83,7 @@ const Contact = () => {
             <FaEnvelope className="info-icon" />
             <div>
               <h3>Email</h3>
-            <p>linkeyemedia@gmail.com</p>
+              <p>linkeyemedia@gmail.com</p>
             </div>
           </div>
         </div>
@@ -93,9 +96,9 @@ const Contact = () => {
               <input
                 type="text"
                 id="name"
-                name="name"
+                name="from_name"   // EmailJS expects from_name
                 value={formData.name}
-                onChange={handleChange}
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 className={errors.name ? 'error' : ''}
               />
               {errors.name && <span className="error-message">{errors.name}</span>}
@@ -106,9 +109,9 @@ const Contact = () => {
               <input
                 type="email"
                 id="email"
-                name="email"
+                name="email"    // EmailJS expects reply_to
                 value={formData.email}
-                onChange={handleChange}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 className={errors.email ? 'error' : ''}
               />
               {errors.email && <span className="error-message">{errors.email}</span>}
@@ -118,10 +121,10 @@ const Contact = () => {
               <label htmlFor="message">Message</label>
               <textarea
                 id="message"
-                name="message"
+                name="message"    // EmailJS template field
                 rows="5"
                 value={formData.message}
-                onChange={handleChange}
+                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 className={errors.message ? 'error' : ''}
               ></textarea>
               {errors.message && <span className="error-message">{errors.message}</span>}
